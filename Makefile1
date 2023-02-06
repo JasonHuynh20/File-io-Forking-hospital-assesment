@@ -1,0 +1,23 @@
+CC = gcc
+
+SRC = singleAssessment.c createBinary.c drAssessment.c
+BIN = $(SRC:.c=)
+OBJ = $(SRC:.c=.o)
+
+all: $(BIN)
+
+singleAssessment: singleAssessment.c
+	$(CC) -o singleAssessment singleAssessment.c
+
+createBinary: createBinary.c
+	$(CC) -o createBinary createBinary.c
+
+drAssessment: drAssessment.c
+	$(CC) -o drAssessment drAssessment.c
+
+run: $(BIN)
+	./singleAssessment patient.bin
+
+clean:
+	rm -f $(BIN) $(OBJ)
+
